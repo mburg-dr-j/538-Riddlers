@@ -1,0 +1,48 @@
+\documentclass[12pt]{article}
+
+\usepackage[all]{xy}
+\usepackage{amsmath}
+
+\topmargin=-0.5in
+\headheight=0in
+\headsep=0in
+\oddsidemargin=0in
+\textheight=9.5in
+\textwidth=6.5in
+\footskip=3in
+
+\title{Riddler Express Solution}
+\author{Marcus Jaiclin; Mercersburg, PA}
+\date{Puzzle posed on Sept 14, 2018, solution Sept 15, 2018}
+
+\begin{document}
+
+\maketitle
+
+Let: $k=\text{Number of Blue sides on second die}$.  
+
+Then, make a tree diagram: 
+\[
+\xymatrix{
+& & B & P(BB) = \frac{5k}{36} \\
+& B \ar@{-}[ru]^{\frac{k}{6}}  \ar@{-}[rd]^{\frac{6-k}{6}} & \\
+& & R & P(BR) = \frac{30-5k}{36} \\
+\ar@{-}[ruu]^{\frac{5}{6}} \ar@{-}[rdd]^{\frac{1}{6}} & & \\
+& & B & P(RB) = \frac{k}{36} \\
+& R \ar@{-}[ru]^{\frac{k}{6}}  \ar@{-}[rd]^{\frac{6-k}{6}} & \\
+& & R & P(RR) = \frac{6-k}{36} \\
+}
+\]
+
+Abby wins on BB or RR:
+\[ P(RR) + P(BB) = \frac{5k}{36} + \frac{6-k}{36} = \frac{6+4k}{36} \]
+Beatrice wins on BR or RB:
+\[ P(BR) + P(RB) = \frac{30-5k}{36} + \frac{k}{36} = \frac{30-4k}{36} \]
+Their chances of winning are equal when:
+\[ \frac{6+4k}{36} = \frac{30-4k}{36} \]
+\[ 6+4k = 30-4k \]
+\[ 8k=24 \]
+\[ k=3 \]
+So the second die should have three blue and three red faces.
+
+\end{document}
